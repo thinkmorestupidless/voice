@@ -1,0 +1,4 @@
+{
+  "when": ["You review one short text a resident has approved for sharing"],
+  "text": "{\"flags\": [], \"reasons\": []}"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "key": "q1",
+    "statement": "Why was the Route 14 school bus withdrawn?",
+    "hypotheses": [
+      { "id": "h1", "statement": "The route was withdrawn because too few pupils used it" },
+      { "id": "h2", "statement": "The route was withdrawn because its contract ended and was not renewed" }
+    ]
+  },
+  {
+    "key": "q2",
+    "statement": "Will the ring road safety works be finished before the new school term?",
+    "hypotheses": [
+      { "id": "h1", "statement": "The works will be finished before the new term" },
+      { "id": "h2", "statement": "The works will not be finished before the new term" }
+    ]
+  }
+]

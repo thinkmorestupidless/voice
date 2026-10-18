@@ -1,0 +1,12 @@
+[
+  { "message": "The school bus from Northfield to Kingsway Academy was withdrawn in September, and my daughter now walks forty minutes along the ring road.", "proposes": true, "kinds": ["Problem", "Where", "When", "Impact"], "grounded": ["bus", "Northfield", "September", "forty minutes"] },
+  { "message": "Since the Route 14 bus stopped, my child walks along the ring road to school.", "proposes": true, "kinds": ["Problem", "Impact"], "grounded": ["Route 14", "ring road"] },
+  { "message": "We now drive to school every day because there is no bus; it costs us a lot.", "proposes": true, "kinds": ["Problem", "Impact"], "grounded": ["no bus", "costs"] },
+  { "message": "The streetlights on Mill Lane have been out since the storm in March and the path by the river is pitch black.", "proposes": true, "kinds": ["Problem", "Where", "When"], "grounded": ["streetlights", "Mill Lane", "March"] },
+  { "message": "Bins on Ash Grove were missed three weeks running in October.", "proposes": true, "kinds": ["Problem", "Where", "When"], "grounded": ["Bins", "Ash Grove", "October"] },
+  { "message": "The pedestrian crossing outside the library takes so long to change that people cross on red.", "proposes": true, "kinds": ["Problem", "Where", "Impact"], "grounded": ["crossing", "library"] },
+  { "message": "Something is wrong with the buses near us.", "proposes": false, "kinds": [], "grounded": [] },
+  { "message": "I'd rather not say. The buses are just unreliable.", "proposes": false, "kinds": [], "grounded": [] },
+  { "message": "Hello, is anyone there?", "proposes": false, "kinds": [], "grounded": [] },
+  { "message": "The playground at Elm Park has had a broken gate since the summer, and younger children wander towards the road.", "proposes": true, "kinds": ["Problem", "Where", "When", "Impact"], "grounded": ["gate", "Elm Park", "summer"] }
+]

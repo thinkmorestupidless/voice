@@ -1,0 +1,6 @@
+{
+  "when": [
+    "[3] citizen: I'd rather not say. The buses are just unreliable."
+  ],
+  "text": "{\"reply\": \"That's fine. Unreliable buses can make getting around hard. Is there anything else you'd like to add, in your own words?\"}"
+}

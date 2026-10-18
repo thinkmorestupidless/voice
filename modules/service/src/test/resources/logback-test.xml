@@ -1,0 +1,20 @@
+<!--
+  Tests: everything at INFO and above is held in memory for LogHygieneSuite, as a deployed service
+  would log it; only warnings reach the console.
+-->
+<configuration>
+  <appender name="CAPTURE" class="voice.support.CapturedLogs" />
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>WARN</level>
+    </filter>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="io.r2dbc" level="WARN" />
+  <root level="INFO">
+    <appender-ref ref="CAPTURE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

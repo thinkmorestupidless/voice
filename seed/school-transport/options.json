@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Reinstate the Route 14 bus",
+    "description": "Tender a new contract for the morning and afternoon runs between Kingsway and Northfield.",
+    "costs": ["The cost of a new contract for the route"],
+    "benefits": ["Pupils who used the bus travel by bus again"],
+    "openQuestions": ["How many pupils would use it?", "Would an operator tender for it?"]
+  },
+  {
+    "title": "A lit footpath beside the ring road",
+    "description": "Build a separated, lit path along the walking route to school.",
+    "costs": ["Construction", "A longer walk for pupils than the bus"],
+    "benefits": ["A safe walking route all year"],
+    "openQuestions": ["Could it be finished before the new term?"]
+  }
+]

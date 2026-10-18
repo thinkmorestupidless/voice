@@ -1,0 +1,50 @@
+[
+  {
+    "id": "voice.src.route-review-2026",
+    "name": "Northfield Council home-to-school route review: Route 14 (illustrative)",
+    "licence": "CC0 1.0 (fictional sample text)",
+    "attribution": "Fictional sample written for the Voice seed pack. Not a record of any real council.",
+    "link": "https://voice.example/seed/route-review-2026",
+    "publishedAt": "2026-01-20T00:00:00Z"
+  },
+  {
+    "id": "voice.src.parents-survey-2026",
+    "name": "Kingsway parents' school travel survey (illustrative)",
+    "licence": "CC0 1.0 (fictional sample text)",
+    "attribution": "Fictional sample written for the Voice seed pack. Not a real survey.",
+    "link": "https://voice.example/seed/parents-survey-2026",
+    "publishedAt": "2026-02-10T00:00:00Z"
+  },
+  {
+    "id": "voice.src.cabinet-minutes-2026",
+    "name": "Northfield cabinet minutes, 3 March 2026 (illustrative)",
+    "licence": "CC0 1.0 (fictional sample text)",
+    "attribution": "Fictional sample written for the Voice seed pack. Not real minutes.",
+    "link": "https://voice.example/seed/cabinet-minutes-2026",
+    "publishedAt": "2026-03-05T00:00:00Z"
+  },
+  {
+    "id": "voice.src.operator-letter-2026",
+    "name": "Letter from the Route 14 operator to the council (illustrative)",
+    "licence": "CC0 1.0 (fictional sample text)",
+    "attribution": "Fictional sample written for the Voice seed pack. Not a real letter.",
+    "link": "https://voice.example/seed/operator-letter-2026",
+    "publishedAt": "2026-03-12T00:00:00Z"
+  },
+  {
+    "id": "voice.src.collision-summary-2025",
+    "name": "Ring road collision summary 2021 to 2025 (illustrative)",
+    "licence": "CC0 1.0 (fictional sample text)",
+    "attribution": "Fictional sample written for the Voice seed pack. Not real collision data.",
+    "link": "https://voice.example/seed/collision-summary-2025",
+    "publishedAt": "2025-12-01T00:00:00Z"
+  },
+  {
+    "id": "voice.src.travel-guidance-2024",
+    "name": "Summary of home-to-school travel guidance (illustrative)",
+    "licence": "CC0 1.0 (fictional sample text)",
+    "attribution": "Fictional sample written for the Voice seed pack. A paraphrase for testing, not legal guidance.",
+    "link": "https://voice.example/seed/travel-guidance-2024",
+    "publishedAt": "2024-06-01T00:00:00Z"
+  }
+]

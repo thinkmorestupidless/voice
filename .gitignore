@@ -1,0 +1,12 @@
+target/
+.bsp/
+.metals/
+.idea/
+.vscode/
+.DS_Store
+*.log
+.env.local
+.env*.local
+web/node_modules/
+web/dist/
+web/coverage/

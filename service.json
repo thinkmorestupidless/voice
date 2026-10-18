@@ -1,0 +1,21 @@
+{
+  "name": "voice",
+  "service": {
+    "image": "voice:${VERSION}",
+    "runtime": "0.12.0",
+    "env": [
+      { "name": "VOICE_REASONING_SERVICE", "value": "reasoning" },
+      { "name": "VOICE_INVITE_CODES", "secretKeyRef": { "name": "voice-secrets", "key": "VOICE_INVITE_CODES" } },
+      { "name": "VOICE_SESSION_KEY", "secretKeyRef": { "name": "voice-secrets", "key": "VOICE_SESSION_KEY" } },
+      { "name": "ANTHROPIC_API_KEY", "secretKeyRef": { "name": "voice-secrets", "key": "ANTHROPIC_API_KEY" } },
+      { "name": "ANKKA_AUTH_ISSUERS", "value": "staff" },
+      { "name": "ANKKA_AUTH_STAFF_ISSUER", "value": "${STAFF_ISSUER}" },
+      { "name": "ANKKA_AUTH_STAFF_JWKS_URL", "value": "${STAFF_JWKS_URL}" },
+      { "name": "ANKKA_AUTH_STAFF_AUDIENCE", "value": "voice-staff" },
+      { "name": "VOICE_SUPPRESSION_THRESHOLD", "value": "5" },
+      { "name": "VOICE_SESSION_HOURS", "value": "12" },
+      { "name": "VOICE_DORMANCY_PERIOD", "value": "180d" }
+    ],
+    "resources": { "instanceType": "small", "autoscaling": { "minInstances": 1 } }
+  }
+}

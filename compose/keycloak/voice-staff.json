@@ -1,0 +1,79 @@
+{
+  "realm": "voice-staff",
+  "enabled": true,
+  "sslRequired": "none",
+  "accessTokenLifespan": 3600,
+  "roles": {
+    "realm": [
+      { "name": "representative", "description": "Opens investigations and records actions, decisions, outcomes and updates" },
+      { "name": "reviewer", "description": "Reviews shared contributions and curates evidence" },
+      { "name": "operator", "description": "Provisions staff and handles held erasures; never reads private conversation content" }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "voice-staff",
+      "name": "Voice staff",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "redirectUris": ["http://localhost:3000/*"],
+      "webOrigins": ["http://localhost:3000"],
+      "protocolMappers": [
+        {
+          "name": "audience voice-staff",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "config": {
+            "included.client.audience": "voice-staff",
+            "access.token.claim": "true",
+            "id.token.claim": "false"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "representative",
+      "enabled": true,
+      "firstName": "Robin",
+      "lastName": "Representative",
+      "email": "representative@voice.test",
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "local-representative", "temporary": false }],
+      "realmRoles": ["representative"]
+    },
+    {
+      "username": "reviewer",
+      "enabled": true,
+      "firstName": "Riley",
+      "lastName": "Reviewer",
+      "email": "reviewer@voice.test",
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "local-reviewer", "temporary": false }],
+      "realmRoles": ["reviewer"]
+    },
+    {
+      "username": "operator",
+      "enabled": true,
+      "firstName": "Oakley",
+      "lastName": "Operator",
+      "email": "operator@voice.test",
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "local-operator", "temporary": false }],
+      "realmRoles": ["operator"]
+    },
+    {
+      "username": "seed",
+      "enabled": true,
+      "firstName": "Seed",
+      "lastName": "Loader",
+      "email": "seed@voice.test",
+      "emailVerified": true,
+      "credentials": [{ "type": "password", "value": "local-seed", "temporary": false }],
+      "realmRoles": ["reviewer", "operator", "representative"]
+    }
+  ]
+}

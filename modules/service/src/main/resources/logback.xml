@@ -1,0 +1,18 @@
+<!--
+  What a deployed voice logs (FR-060): time, level, logger and message, and nothing from the MDC.
+  No handler logs a message's text, a prompt or a contact detail; LogHygieneSuite holds a full run
+  to that. Pekko's own logging stays at INFO, where it logs no payload.
+-->
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{yyyy-MM-dd'T'HH:mm:ss.SSSXXX} %-5level %logger{36} - %msg%n%ex{short}</pattern>
+    </encoder>
+  </appender>
+  <logger name="org.apache.pekko" level="INFO" />
+  <logger name="com.thinkmorestupidless.ankka" level="INFO" />
+  <logger name="io.r2dbc" level="WARN" />
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

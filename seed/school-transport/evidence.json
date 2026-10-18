@@ -1,0 +1,86 @@
+[
+  {
+    "key": "e1",
+    "source": "voice.src.route-review-2026",
+    "locator": "Section 3, table 2",
+    "excerpt": "Route 14 carried an average of 11 pupils a day in the autumn term.",
+    "publishedAt": "2026-01-20T00:00:00Z",
+    "scope": "Morning runs on Route 14, September to December 2025",
+    "authority": "Council officers' count from boarding records",
+    "limitations": "Counts the morning run only; does not count pupils driven to school after the route changed.",
+    "bearsOn": ["q1/h1"],
+    "accept": true
+  },
+  {
+    "key": "e2",
+    "source": "voice.src.parents-survey-2026",
+    "locator": "Question 4, summary of answers",
+    "excerpt": "23 families said a child used the Route 14 bus on most school days.",
+    "publishedAt": "2026-02-10T00:00:00Z",
+    "scope": "Families who answered the survey, January 2026",
+    "authority": "Self-reported by parents; collected by a parents' group",
+    "limitations": "Families chose whether to answer; not a census of riders.",
+    "bearsOn": ["q1/h1"],
+    "accept": true
+  },
+  {
+    "key": "e3",
+    "source": "voice.src.cabinet-minutes-2026",
+    "locator": "Item 7, resolution 2",
+    "excerpt": "The contract for Route 14 ended on 31 March and was not renewed.",
+    "publishedAt": "2026-03-05T00:00:00Z",
+    "scope": "The cabinet's decision on the Route 14 contract",
+    "authority": "Minutes of a cabinet meeting",
+    "limitations": "Records the decision, not the reasons officers gave for it.",
+    "bearsOn": ["q1/h2"],
+    "accept": true
+  },
+  {
+    "key": "e4",
+    "source": "voice.src.operator-letter-2026",
+    "locator": "Paragraph 2",
+    "excerpt": "We were not invited to tender for a further term of the Route 14 contract.",
+    "publishedAt": "2026-03-12T00:00:00Z",
+    "scope": "The operator's account of the contract's end",
+    "authority": "Letter from the contracted operator",
+    "limitations": "One party's account; the council has not replied in the record.",
+    "bearsOn": ["q1/h2"],
+    "accept": true
+  },
+  {
+    "key": "e5",
+    "source": "voice.src.travel-guidance-2024",
+    "locator": "Part 2, eligibility",
+    "excerpt": "Councils must arrange free travel for eligible pupils who live beyond the statutory walking distance.",
+    "publishedAt": "2024-06-01T00:00:00Z",
+    "scope": "General duty, not specific to Route 14",
+    "authority": "A summary of national guidance",
+    "limitations": "A paraphrase; eligibility depends on distance and circumstances not recorded here.",
+    "bearsOn": [],
+    "accept": true
+  },
+  {
+    "key": "e6",
+    "source": "voice.src.collision-summary-2025",
+    "locator": "Table 1, totals",
+    "excerpt": "Twelve collisions were recorded on the ring road between 2021 and 2025.",
+    "publishedAt": "2025-12-01T00:00:00Z",
+    "scope": "Collisions reported to the police on the ring road, 2021 to 2025",
+    "authority": "Police-reported collision data, summarised",
+    "limitations": "Says nothing about when safety works will be finished.",
+    "bearsOn": [],
+    "accept": true
+  },
+  {
+    "key": "e7",
+    "source": "voice.src.route-review-2026",
+    "locator": "Correction notice, page 1",
+    "excerpt": "Correction: Route 14 carried an average of 17 pupils a day in the autumn term; the earlier figure omitted the afternoon run.",
+    "publishedAt": "2026-02-02T00:00:00Z",
+    "scope": "Morning and afternoon runs on Route 14, September to December 2025",
+    "authority": "Council officers' corrected count",
+    "limitations": "Still counts boarding records only.",
+    "bearsOn": ["q1/h1"],
+    "accept": false
+  }
+]

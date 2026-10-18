@@ -1,0 +1,6 @@
+{
+  "when": [
+    "[1] citizen: The school bus from Northfield to Kingsway Academy was withdrawn in September, and my daughter now walks forty minutes along the ring road."
+  ],
+  "text": "{\"reply\": \"Thank you for telling me. Here is what I understood; please check it, change anything that is wrong, or discard it.\", \"proposal\": {\"original\": \"The school bus from Northfield to Kingsway Academy was withdrawn in September, and my daughter now walks forty minutes along the ring road.\", \"summary\": \"The school bus from Northfield to Kingsway Academy was withdrawn in September and the resident's daughter now walks forty minutes along the ring road.\", \"elements\": [{\"kind\": \"Problem\", \"text\": \"school bus withdrawn\", \"spans\": [{\"message\": 1, \"from\": 0, \"to\": 64}]}, {\"kind\": \"Where\", \"text\": \"Northfield to Kingsway Academy\", \"spans\": [{\"message\": 1, \"from\": 15, \"to\": 50}]}, {\"kind\": \"When\", \"text\": \"September\", \"spans\": [{\"message\": 1, \"from\": 65, \"to\": 77}]}, {\"kind\": \"Who\", \"text\": \"the resident's daughter\", \"spans\": [{\"message\": 1, \"from\": 83, \"to\": 94}]}, {\"kind\": \"Impact\", \"text\": \"forty-minute walk along the ring road\", \"spans\": [{\"message\": 1, \"from\": 99, \"to\": 138}]}], \"confidence\": \"High\"}}"
+}
