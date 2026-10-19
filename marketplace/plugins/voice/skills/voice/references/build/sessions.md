@@ -2,7 +2,7 @@
 
 > Start a participant's session with an invite code, keep the recovery credential, renew and recover a session, and read the privacy and AI notices Voice shows before the first message.
 
-Source: https://voice.ankka.cloud/build/sessions/
+Source: https://docs.makethemlisten.uk/build/sessions/
 A participant is pseudonymous. A session starts with the pilot's invite code and nothing about who
 the person is, and the only way back to its records is the recovery credential shown once at the
 start. This page is the `/me/sessions` routes and the token every other `/me` route carries.

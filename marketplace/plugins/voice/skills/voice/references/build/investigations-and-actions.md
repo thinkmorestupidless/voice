@@ -2,7 +2,7 @@
 
 > Work the queue as a representative, ask the research agent for suggestions, open an investigation, record an action, a decision and an outcome, and publish an update, with what each refuses.
 
-Source: https://voice.ankka.cloud/build/investigations-and-actions/
+Source: https://docs.makethemlisten.uk/build/investigations-and-actions/
 A representative is the only person who records what will be done. Everything on this page needs
 the `representative` role; a principal without it is refused with `403` and
 `investigation.not-representative`, and nothing changes.

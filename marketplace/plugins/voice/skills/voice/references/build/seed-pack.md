@@ -2,7 +2,7 @@
 
 > What the school-transport seed pack holds, how it is loaded through the staff routes into Voice and the reasoning service, and how its synthetic participants are replayed through the citizen routes.
 
-Source: https://voice.ankka.cloud/build/seed-pack/
+Source: https://docs.makethemlisten.uk/build/seed-pack/
 `seed/school-transport/` is one public issue, "Rural school bus withdrawal", with the sources,
 evidence, questions and claims a reviewer would have curated, and synthetic participants for the
 representative's dashboard. Every source is fictional, written for the pack, labelled

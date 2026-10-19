@@ -2,7 +2,7 @@
 
 > Deploy the reasoning service, the project secrets, the voice service and its interface to an ankka installation, with the staff realm the installation must have, by hand on kind or from a version tag.
 
-Source: https://voice.ankka.cloud/deploy/deploy-on-ankka/
+Source: https://docs.makethemlisten.uk/deploy/deploy-on-ankka/
 Voice deploys as two services in one [ankka](https://docs.ankka.cloud/) project, with the reasoning
 service beside them: `reasoning`, from its own release; `voice`, the service; `voice-web`, the
 interface, the one thing exposed. Values on this page are names only: no secret value, hostname or

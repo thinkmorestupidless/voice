@@ -2,7 +2,7 @@
 
 > Look up every rule a Voice command can break, by name, with its status, when it is broken and the identifiers it names, and the rules that are answers or build-time checks rather than errors.
 
-Source: https://voice.ankka.cloud/reference/refusals/
+Source: https://docs.makethemlisten.uk/reference/refusals/
 Every rule a Voice command can break, named. A refusal is an `HttpProblem` whose body is
 `{ "rule": "<name>", "status": <n>, "error": "<sentence>", "names": { … } }`, the same shape the
 reasoning service uses, so one client reads both. The `names` map carries the identifiers the rule is

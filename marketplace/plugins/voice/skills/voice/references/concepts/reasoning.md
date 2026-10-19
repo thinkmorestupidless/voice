@@ -2,7 +2,7 @@
 
 > How Voice keeps questions, evidence and claims in ankka-reasoning as a service caller, what it writes and reads, how it names records, and why the graph tier is optional.
 
-Source: https://voice.ankka.cloud/concepts/reasoning/
+Source: https://docs.makethemlisten.uk/concepts/reasoning/
 Voice holds no evidence of its own. Questions, hypotheses, sources, evidence and claims live in
 [ankka-reasoning](https://reasoning.ankka.cloud/), a sibling service whose records are never edited,
 and an issue holds references to them. Voice adds no civic word to the reasoning service: no node

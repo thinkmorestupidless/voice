@@ -5,7 +5,7 @@
 # `uv run --project tools/docs docs build`. See docs/contributing/documentation.md.
 site_name: Voice
 site_description: Privacy-first civic participation on ankka — a resident talks pseudonymously about a concern, approves exactly what is shared, follows what a representative records about it, and can have their personal data erased while the public issue stays.
-site_url: https://voice.ankka.cloud/
+site_url: https://docs.makethemlisten.uk/
 repo_url: https://github.com/thinkmorestupidless/voice
 repo_name: thinkmorestupidless/voice
 edit_uri: edit/main/docs/

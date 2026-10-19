@@ -2,7 +2,7 @@
 
 > Express a priority, a trade-off or a consideration on an issue as a participant, amend or withdraw it, and read the labelled aggregate and the representative's dashboard that result.
 
-Source: https://voice.ankka.cloud/build/deliberation/
+Source: https://docs.makethemlisten.uk/build/deliberation/
 A participant says how much an issue matters to them and which trade-offs they would accept. Each
 is an opinion, sealed like any personal value, and shown to anyone else only inside a count with its
 label. One expression per participant per issue holds all of it.

@@ -2,7 +2,7 @@
 
 > Why a conversation turn and a research run are workflows answered with 202, how a browser polls or streams the result, and how the gateway's fifteen-second bound shapes every route.
 
-Source: https://voice.ankka.cloud/concepts/nothing-waits-for-a-model/
+Source: https://docs.makethemlisten.uk/concepts/nothing-waits-for-a-model/
 The platform's gateway ends every response, streams included, at fifteen seconds. A model call
 takes a few seconds on a good day and longer on a bad one. So no route that a browser waits on ever
 calls the model: the route records what it was given, starts a workflow, and answers `202` with an

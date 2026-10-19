@@ -2,7 +2,7 @@
 
 > The seven stages a concern passes through, from a private conversation to an erasure, who acts at each, what becomes visible, and the seven state labels a reader sees.
 
-Source: https://voice.ankka.cloud/concepts/the-loop/
+Source: https://docs.makethemlisten.uk/concepts/the-loop/
 A concern moves through seven stages. At each, a different person acts, and a little more becomes
 visible to a little wider audience. Nothing moves to the next stage by itself: a participant
 confirms, approves and follows; a reviewer approves; a representative records.

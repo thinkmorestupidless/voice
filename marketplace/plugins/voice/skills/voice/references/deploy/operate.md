@@ -2,7 +2,7 @@
 
 > Provision staff accounts, read the access log, handle erasure requests held for verification, set the dormancy period and threshold, know what the logs omit, and what a backup can undo.
 
-Source: https://voice.ankka.cloud/deploy/operate/
+Source: https://docs.makethemlisten.uk/deploy/operate/
 The operator runs the pilot and is not entitled to read private content. Everything on this page
 is reachable with the `operator` role, and none of it shows a participant's words.
 

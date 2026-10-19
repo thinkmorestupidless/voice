@@ -2,7 +2,7 @@
 
 > Check what Voice does not do, what is out of scope for the pilot, the two limits of erasure as built, and the bounds a reader, a participant or an operator will meet.
 
-Source: https://voice.ankka.cloud/reference/limitations/
+Source: https://docs.makethemlisten.uk/reference/limitations/
 The honest list: what is not built, what is deliberate, and what a pilot must plan round. Each entry
 says how Voice behaves today.
 

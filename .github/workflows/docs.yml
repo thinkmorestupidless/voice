@@ -1,5 +1,5 @@
 # The documentation: checked on every pull request, published to GitHub Pages from main. The site is
-# https://voice.ankka.cloud/, a custom domain set in the repository's Pages settings with a DNS CNAME
+# https://docs.makethemlisten.uk/, a custom domain set in the repository's Pages settings with a DNS CNAME
 # to the GitHub Pages host; Pages must be enabled with "GitHub Actions" as its source, once.
 name: docs
 on:

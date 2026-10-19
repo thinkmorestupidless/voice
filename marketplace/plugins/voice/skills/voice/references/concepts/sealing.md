@@ -2,7 +2,7 @@
 
 > How every personal value is sealed under a key per participant, opened only at the edge, classified by field, and made unreadable everywhere by destroying the key, and what stays.
 
-Source: https://voice.ankka.cloud/concepts/sealing/
+Source: https://docs.makethemlisten.uk/concepts/sealing/
 Voice promises that a participant's personal data can be erased while the public issue stays. The
 promise is kept by one mechanism: every personal value is stored sealed under a key that belongs to
 that participant alone, and erasure destroys the key.

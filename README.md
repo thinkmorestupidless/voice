@@ -6,7 +6,7 @@ they choose, and hears what representatives recorded about it; anyone can read a
 issues; a participant can have their personal data erased. A demonstrator for a pilot, on synthetic
 data.
 
-**Documentation: [voice.ankka.cloud](https://voice.ankka.cloud/).** Built from `docs/` by ankka's
+**Documentation: [docs.makethemlisten.uk](https://docs.makethemlisten.uk/).** Built from `docs/` by ankka's
 docs tool (`just docs`), and rendered as an agent skill under `marketplace/`.
 
 - What it does and for whom: `docs/index.md`

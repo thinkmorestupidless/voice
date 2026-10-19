@@ -2,7 +2,7 @@
 
 > Every environment variable the voice service, the seed client, the test recipes and the deploy script read, with its default and what it does, and the variables the platform supplies.
 
-Source: https://voice.ankka.cloud/reference/configuration/
+Source: https://docs.makethemlisten.uk/reference/configuration/
 The service reads its settings once at start, from environment variables. Changing one is a
 restart. Locally they come from `.env.local`, which `just run` writes the first time from
 `.env.local.example`; in a deployment they are the descriptor's `env`, with the secret values from

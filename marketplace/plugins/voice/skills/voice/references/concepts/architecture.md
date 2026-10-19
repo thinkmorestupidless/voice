@@ -2,7 +2,7 @@
 
 > The two services and the reasoning service beside them, the three endpoints with their access rules, the components behind each stage of the loop, and the rules the code holds to.
 
-Source: https://voice.ankka.cloud/concepts/architecture/
+Source: https://docs.makethemlisten.uk/concepts/architecture/
 Voice is one [ankka](https://docs.ankka.cloud/) service, `voice`, written in Scala 3, and one
 web-hosted interface, `voice-web`, which mounts the service at `/api`. The reasoning service,
 `reasoning` from [ankka-reasoning](https://reasoning.ankka.cloud/), runs beside them and holds the

@@ -2,7 +2,7 @@
 
 > Follow an issue as a participant, read the one update each development sends to the inbox, know what an update may and may not say, and stop following.
 
-Source: https://voice.ankka.cloud/build/following/
+Source: https://docs.makethemlisten.uk/build/following/
 Following is an explicit choice. A participant who reads an issue has not followed it; one who
 follows it is told of each material development once, in their inbox, and can stop at any time.
 

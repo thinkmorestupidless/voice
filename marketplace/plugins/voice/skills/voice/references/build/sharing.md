@@ -2,7 +2,7 @@
 
 > Approve the exact text and audience of a contribution, submit it for review, see what the reviewer sees and decides, join an issue, and withdraw a disclosure.
 
-Source: https://voice.ankka.cloud/build/sharing/
+Source: https://docs.makethemlisten.uk/build/sharing/
 Nothing leaves a conversation unless the participant approves the exact words and the exact
 audience. A reviewer then decides whether those words may enter the shared space. This page is both
 sides: the participant's `/me` routes and the reviewer's `/staff/reviews`.

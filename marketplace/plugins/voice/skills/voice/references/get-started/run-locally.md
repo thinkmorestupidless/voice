@@ -2,7 +2,7 @@
 
 > Start Voice on a laptop with its database, the reasoning service and a staff identity provider in Docker, load the seed pack, and open the interface.
 
-Source: https://voice.ankka.cloud/get-started/run-locally/
+Source: https://docs.makethemlisten.uk/get-started/run-locally/
 This page takes a clone of the repository to the service on `localhost:9000`, the interface on
 `localhost:3000`, and one public issue to read. It takes a few minutes, most of it the first build.
 

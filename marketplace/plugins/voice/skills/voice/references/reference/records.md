@@ -2,7 +2,7 @@
 
 > Look up every record Voice keeps, the ankka component that holds it, its fields with their classification, the events that change it, and what erasure does to each.
 
-Source: https://voice.ankka.cloud/reference/records/
+Source: https://docs.makethemlisten.uk/reference/records/
 Every record Voice keeps, which component holds it, and which of its fields are personal. The
 conventions hold throughout:
 

@@ -2,7 +2,7 @@
 
 > The suites from the domain's milliseconds to the living features against a throwaway Postgres, the tier against the real reasoning service, the live-model suites, and the checker over the features and the glossary.
 
-Source: https://voice.ankka.cloud/build/testing/
+Source: https://docs.makethemlisten.uk/build/testing/
 Voice is tested at four levels, each proving more with more running, and `sbt test` runs the first
 two in a few minutes with Docker. The live-model suites and the tier against the real reasoning
 service are run on purpose.

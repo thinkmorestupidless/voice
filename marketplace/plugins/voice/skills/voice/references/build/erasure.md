@@ -2,7 +2,7 @@
 
 > See what Voice holds for a participant, request erasure with or without the recovery credential, verify a held request as the operator, read the receipt, and set the dormancy period.
 
-Source: https://voice.ankka.cloud/build/erasure/
+Source: https://docs.makethemlisten.uk/build/erasure/
 A participant can ask for their personal data to be erased, and a participant who does not return
 for the dormancy period is erased without asking. Both run the same workflow; the difference is how
 the request is verified and what cause the retained public copies carry.

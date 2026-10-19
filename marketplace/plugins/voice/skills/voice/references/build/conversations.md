@@ -2,7 +2,7 @@
 
 > Hold a private conversation one turn at a time, read a turn's result by polling or a stream, and edit, confirm or discard the proposal Voice makes, so it becomes a confirmed concern.
 
-Source: https://voice.ankka.cloud/build/conversations/
+Source: https://docs.makethemlisten.uk/build/conversations/
 A conversation is one participant's private exchange with Voice. Every message, reply and proposal
 in it is sealed under the participant's key and shown to no one else. Each message is a turn that
 runs off the request path, and the turn's result is read afterwards.

@@ -2,7 +2,7 @@
 
 > Who reaches Voice, through which endpoint and credential, what each may read and what each never sees, and why the operator who runs the pilot cannot read private content.
 
-Source: https://voice.ankka.cloud/concepts/audiences/
+Source: https://docs.makethemlisten.uk/concepts/audiences/
 Every route belongs to one of three endpoints, and every endpoint admits one kind of caller. Who a
 person is decides what they may read, and the decision is made at the edge, once, from the
 credential they present.

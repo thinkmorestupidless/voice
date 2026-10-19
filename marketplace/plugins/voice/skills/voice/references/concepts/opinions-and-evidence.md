@@ -2,7 +2,7 @@
 
 > Why a concern is a statement and not a fact, why a priority is an opinion and never evidence, how counts are labelled and small cells hidden, and why no option is ever endorsed.
 
-Source: https://voice.ankka.cloud/concepts/opinions-and-evidence/
+Source: https://docs.makethemlisten.uk/concepts/opinions-and-evidence/
 Voice keeps three things apart that a casual design would merge: what a person says they experience,
 what the record shows, and what people would prefer. Each is shown with its own label, and none is
 ever rendered as another.

@@ -2,7 +2,7 @@
 
 > Look up what each word means in Voice, where every term has exactly one sense, and which everyday near-synonyms are not used for it.
 
-Source: https://voice.ankka.cloud/reference/glossary/
+Source: https://docs.makethemlisten.uk/reference/glossary/
 The words this documentation, the interface, the API and the refusals use, each in exactly one
 sense. Where a term has near-synonyms in everyday speech, the entry says which words are not used
 for it, so a search for the wrong word still lands on the right one. The same list, in

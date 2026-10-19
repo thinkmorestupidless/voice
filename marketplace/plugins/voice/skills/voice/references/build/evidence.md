@@ -2,7 +2,7 @@
 
 > Curate an issue as a reviewer, from questions and candidate evidence to claims and corrections, and read it as anyone, from the issue page and evidence cards to claim explanations, abstentions and search.
 
-Source: https://voice.ankka.cloud/build/evidence/
+Source: https://docs.makethemlisten.uk/build/evidence/
 An issue is what a reader explores: approved contributions, questions with their competing
 hypotheses, evidence from cited sources, claims derived from that evidence, options, and the record
 of what was done. A reviewer curates the evidence; the reasoning service holds it; Voice shows it

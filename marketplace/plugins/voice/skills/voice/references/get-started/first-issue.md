@@ -2,7 +2,7 @@
 
 > Walk the loop over HTTP with curl, from a participant's session through a representative's action and a follower's update to an erasure and its receipt.
 
-Source: https://voice.ankka.cloud/get-started/first-issue/
+Source: https://docs.makethemlisten.uk/get-started/first-issue/
 This page walks the loop against the service as [Run it on your machine](run-locally.md) leaves it,
 with the seed pack loaded. Three people take part: a participant, a representative and an operator.
 Every reply shown is the service's own, shortened where the page says so; identifiers differ on your

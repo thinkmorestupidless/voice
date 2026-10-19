@@ -8,7 +8,7 @@ related: [contributing/features-and-glossary.md, reference/glossary.md]
 # Writing documentation
 
 Voice's documentation is one tree of plain Markdown under `docs/`, and every way of reading it is a
-rendering of that tree: the site at `https://voice.ankka.cloud/`, `llms.txt`, `llms-full.txt`, a
+rendering of that tree: the site at `https://docs.makethemlisten.uk/`, `llms.txt`, `llms-full.txt`, a
 Markdown copy of each page, `docs-index.json`, and the agent skill in the marketplace plugin. The
 tool that renders and checks it is ankka's, taken as a dependency, and the rules are ankka's too;
 the page [Writing documentation](https://docs.ankka.cloud/contributing/documentation/) in ankka's

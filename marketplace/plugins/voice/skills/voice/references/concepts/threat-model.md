@@ -2,7 +2,7 @@
 
 > What must be read before any real text reaches a model, how identity is kept out of Voice, what every log and receipt omits, and the threats considered with their mitigations.
 
-Source: https://voice.ankka.cloud/concepts/threat-model/
+Source: https://docs.makethemlisten.uk/concepts/threat-model/
 Voice minimises first and protects second: it asks for no identity, seals what it must hold, and
 puts a person between anything a participant said and anyone else seeing it. This page says what
 that leaves to consider.
