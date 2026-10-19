@@ -1,0 +1,10 @@
+{
+  "name": "voice-web",
+  "service": {
+    "image": "voice-web:${VERSION}",
+    "hosting": "web",
+    "processPort": 3000,
+    "mounts": [{ "path": "/api", "service": "voice" }],
+    "callers": []
+  }
+}

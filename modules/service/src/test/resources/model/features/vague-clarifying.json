@@ -1,0 +1,6 @@
+{
+  "when": [
+    "[1] citizen: Something is wrong with the buses near us."
+  ],
+  "text": "{\"reply\": \"I'm listening.\", \"clarifyingQuestion\": \"Could you tell me which bus or route you mean, and where? You can skip this question if you prefer.\"}"
+}

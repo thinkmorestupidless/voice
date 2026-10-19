@@ -1,0 +1,4 @@
+{
+  "when": ["You review one short text a resident has approved for sharing", "the only family"],
+  "text": "{\"flags\": [\"Distinctive\", \"SmallGroup\", \"Health\", \"Minor\"], \"reasons\": [\"it describes a household neighbours could recognise\", \"it describes a very small group\", \"it mentions a health detail\", \"it mentions a child\"]}"
+}

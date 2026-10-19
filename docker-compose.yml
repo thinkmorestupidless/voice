@@ -1,0 +1,135 @@
+# What a cluster would supply, for a laptop. `just up` writes both schemas and starts the default,
+# reasoning and staff profiles; `just up-graph` adds the graph tier. Voice itself runs on the host:
+# `just run`. Every password here is a local development value and nothing else.
+services:
+  # Voice's own database: journals, snapshots, durable state, view tables, timers, the secret store.
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ankka
+      POSTGRES_PASSWORD: ankka
+      POSTGRES_DB: ankka
+    ports:
+      - "${VOICE_POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ./target/ddl:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ankka -d ankka"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # The reasoning service's own database, with the schema of the ankka release reasoning is built on.
+  reasoning-postgres:
+    profiles: [reasoning]
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ankka
+      POSTGRES_PASSWORD: ankka
+      POSTGRES_DB: ankka
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./target/reasoning-ddl:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ankka -d ankka"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # The reasoning service, Postgres alone: records and their reads; answers need the graph tier.
+  reasoning:
+    profiles: [reasoning]
+    image: ${VOICE_REASONING_IMAGE:-ghcr.io/thinkmorestupidless/ankka-reasoning:0.1.1}
+    depends_on:
+      reasoning-postgres:
+        condition: service_healthy
+    environment:
+      ANKKA_DB_HOST: reasoning-postgres
+      ANKKA_DB_PORT: "5432"
+      ANKKA_DB_NAME: ankka
+      ANKKA_DB_USER: ankka
+      ANKKA_DB_PASSWORD: ankka
+      # Set by `just up-graph`; empty, the graph consumers are not registered.
+      ANKKA_KAFKA_BOOTSTRAP_SERVERS: ${VOICE_GRAPH_KAFKA:-}
+      REASONING_NEO4J_URI: ${VOICE_GRAPH_NEO4J:-}
+      REASONING_NEO4J_USERNAME: neo4j
+      REASONING_NEO4J_PASSWORD: voice-local-password
+    ports:
+      - "9100:9000"
+
+  # Staff identity: the realm import has one local user per role.
+  keycloak:
+    profiles: [staff]
+    image: quay.io/keycloak/keycloak:26.4
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+    ports:
+      - "8180:8080"
+    volumes:
+      - ./compose/keycloak:/opt/keycloak/data/import:ro
+
+  kafka:
+    profiles: [graph]
+    image: apache/kafka:3.9.1
+    ports:
+      - "9094:9094"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,EXTERNAL://:9094
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --list >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+
+  graph-topic:
+    profiles: [graph]
+    image: apache/kafka:3.9.1
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - >
+        /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists
+        --topic reasoning-graph --partitions 3 --replication-factor 1
+        --config cleanup.policy=compact
+
+  neo4j:
+    profiles: [graph]
+    image: neo4j:5.26-community
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/voice-local-password
+
+  # ankka-contrib's Neo4j graph sink, reading reasoning's delta topic into Neo4j.
+  graph-sink:
+    profiles: [graph]
+    image: ${VOICE_SINK_IMAGE:-ghcr.io/thinkmorestupidless/ankka-graph-sink-neo4j:0.1.0}
+    depends_on:
+      graph-topic:
+        condition: service_completed_successfully
+      neo4j:
+        condition: service_started
+    environment:
+      ANKKA_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      ANKKA_GRAPH_SINK_TOPIC: reasoning-graph
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USERNAME: neo4j
+      NEO4J_PASSWORD: voice-local-password

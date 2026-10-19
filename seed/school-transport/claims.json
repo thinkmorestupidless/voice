@@ -1,0 +1,20 @@
+[
+  {
+    "key": "c1",
+    "statement": "The route review's count suggests Route 14 carried too few pupils to justify a contract.",
+    "derivesFrom": ["e1"],
+    "stances": [{ "hypothesis": "q1/h1", "stance": "supports" }]
+  },
+  {
+    "key": "c2",
+    "statement": "The parents' survey suggests more pupils relied on Route 14 than the route review counted.",
+    "derivesFrom": ["e2"],
+    "stances": [{ "hypothesis": "q1/h1", "stance": "contradicts" }]
+  },
+  {
+    "key": "c3",
+    "statement": "The Route 14 contract ended and was not offered for tender again.",
+    "derivesFrom": ["e3", "e4"],
+    "stances": [{ "hypothesis": "q1/h2", "stance": "supports" }]
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "when": ["You suggest lines of research for one public civic issue"],
+  "text": "{\"sources\": [{\"name\": \"The operator's boarding records for Route 14\", \"why\": \"The two counts on the issue disagree, and neither is the operator's.\"}], \"questions\": [{\"statement\": \"Did the route review count the afternoon runs?\", \"why\": \"The review's count and the parents' survey differ by twelve pupils.\"}], \"investigations\": [{\"question\": \"Why do the route review and the parents' survey disagree about how many pupils used Route 14?\", \"reason\": \"Two accepted pieces of evidence give different numbers for the same route.\", \"records\": [\"voice.src.route-review-2026\", \"voice.src.parents-survey-2026\"]}]}"
+}

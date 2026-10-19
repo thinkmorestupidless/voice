@@ -1,0 +1,16 @@
+# The deterministic privacy detectors (FR-016, R6): one `kind<TAB>regex` per line.
+# Kinds `email`, `phone`, `address`, `postcode` and `name` are identifying details a participant is
+# shown so they can remove them; every kind sets a flag for enhanced review:
+#   health -> Health, minor -> Minor, small-group -> SmallGroup, anything else -> Distinctive.
+# A pattern errs towards flagging: a false flag costs a reviewer a second look, a missed one can
+# identify a person.
+email	[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}
+phone	(?<!\d)(?:\+44\s?|0)(?:\d[\s-]?){9,10}(?!\d)
+address	\b\d{1,4}[a-zA-Z]?\s+[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+(?:Street|St|Road|Rd|Lane|Ln|Avenue|Ave|Close|Drive|Way|Crescent|Court|Place|Terrace|Gardens|Grove|Row)\b
+postcode	\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b
+name	\b(?:Mr|Mrs|Ms|Miss|Dr|Cllr)\.?\s+[A-Z][a-z]+
+name	(?i:my name is|i am called|i'm called)\s+[A-Z][a-z]+
+health	(?i)\b(?:diabet\w*|asthma\w*|cancer|epilep\w*|disab\w*|wheelchair|pregnan\w*|depress\w*|anxiety|autis\w*|dementia|chemotherapy|dialysis|medication|mental health|illness|terminal|hiv)\b
+minor	(?i)\b(?:son|daughter|child|children|kids?|toddler|baby|babies|teenager|pupils?|schoolchildren|schoolboy|schoolgirl|\d{1,2}[- ]year[- ]old)\b
+small-group	(?i)\b(?:the only (?:one|family|person|child|household|house|resident)|only (?:two|three|four|a few|a handful of) (?:families|people|children|households|residents)|one of (?:two|three|four|the few))\b
+distinctive	(?i)\b(?:next door to|opposite the|above the|the house with|my (?:neighbour|landlord|employer|boss|carer))\b

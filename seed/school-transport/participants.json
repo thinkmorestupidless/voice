@@ -1,0 +1,44 @@
+[
+  {
+    "label": "synthetic-1",
+    "message": "Since the Route 14 bus stopped, my child walks along the ring road to school.",
+    "derivative": "Since the Route 14 bus stopped, a child walks along the ring road to school.",
+    "mode": "public-deidentified",
+    "priority": 5
+  },
+  {
+    "label": "synthetic-2",
+    "message": "We now drive to school every day because there is no bus; it costs us a lot.",
+    "derivative": "Without the bus, a family drives to school every day at a real cost.",
+    "mode": "public-deidentified",
+    "priority": 4
+  },
+  {
+    "label": "synthetic-3",
+    "message": "I am not sure the bus was used much, but the road is not safe to walk.",
+    "derivative": "The bus may not have been used much, but the road is not safe to walk.",
+    "mode": "public-deidentified",
+    "priority": 3
+  },
+  {
+    "label": "synthetic-4",
+    "message": "The bus used to pick up three of us at the village green, and now none of us has a way in before nine.",
+    "derivative": "Pupils from one village have no way to reach school before nine since the bus stopped.",
+    "mode": "public-deidentified",
+    "priority": 5
+  },
+  {
+    "label": "synthetic-5",
+    "message": "I work early shifts, so since the bus went my children wait at the school gate for forty minutes before it opens.",
+    "derivative": "Since the bus went, some children wait at the school gate for a long time before it opens.",
+    "mode": "public-deidentified",
+    "priority": 4
+  },
+  {
+    "label": "synthetic-6",
+    "message": "A shared minibus with the next village might be cheaper than bringing the old route back.",
+    "derivative": "A minibus shared with the next village might cost less than restoring the old route.",
+    "mode": "public-deidentified",
+    "priority": 2
+  }
+]
