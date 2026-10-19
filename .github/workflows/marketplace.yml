@@ -1,0 +1,78 @@
+# The documentation as a Claude Code plugin, published to thinkmorestupidless/ankka-marketplace on a
+# version tag. Like deploy.yml it declines to run, rather than failing, when its secret is absent.
+name: marketplace
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  marketplace:
+    # The marketplace is one repository with one plugin per project. This job clones it, replaces
+    # `plugins/voice/` with the rendered plugin, writes this project's entry into the manifest's
+    # `plugins` list without touching the others, and pushes an ordinary commit — never a force push,
+    # which would erase the other projects' plugins.
+    #
+    # Needs `MARKETPLACE_REPO_TOKEN`: a token with contents:write on ankka-marketplace, because the
+    # workflow's own token has no access to another repository. A tag with a hyphen is a pre-release
+    # and publishes nothing.
+    if: ${{ !contains(github.ref_name, '-') }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # With credentials persisted, git would use the workflow's own token for every github.com
+          # URL and the push below would authenticate as github-actions[bot] and be refused.
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: "3.12"
+      # The committed plugin must be the one the pages render to: a stale plugin is a failed
+      # release, not a stale marketplace.
+      - run: uv run --project tools/docs docs check
+      - env:
+          MARKETPLACE_REPO_TOKEN: ${{ secrets.MARKETPLACE_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "$MARKETPLACE_REPO_TOKEN" ]; then
+            echo "::notice::No MARKETPLACE_REPO_TOKEN secret is configured, so the plugin is not published. See docs/contributing/releasing.md."
+            exit 0
+          fi
+          version="${GITHUB_REF_NAME#v}"
+          remote="https://x-access-token:${MARKETPLACE_REPO_TOKEN}@github.com/thinkmorestupidless/ankka-marketplace.git"
+          # The plugin's version is the release whose documentation it carries: 0.0.0 in the tree,
+          # written here, so no tracked file is rewritten by the build.
+          sed -i "s/\"version\": \"0.0.0\"/\"version\": \"$version\"/" marketplace/plugins/voice/.claude-plugin/plugin.json
+          grep -n "\"version\": \"$version\"" marketplace/plugins/voice/.claude-plugin/plugin.json
+          git clone --depth 1 "$remote" "$RUNNER_TEMP/marketplace"
+          cd "$RUNNER_TEMP/marketplace"
+          git config user.name "voice release"
+          git config user.email "release@voice.invalid"
+          rm -rf plugins/voice
+          mkdir -p plugins
+          cp -R "$GITHUB_WORKSPACE/marketplace/plugins/voice" plugins/voice
+          # The entry is the plugin's own manifest, as the marketplace lists it; every other entry is
+          # another project's and is kept as found. The list is sorted so the file is the same
+          # whichever project released last.
+          entry="$(jq -c '{name, source: ("./plugins/" + .name), description, version}' plugins/voice/.claude-plugin/plugin.json)"
+          jq --argjson entry "$entry" \
+            '.plugins = ([.plugins[] | select(.name != $entry.name)] + [$entry] | sort_by(.name))' \
+            .claude-plugin/marketplace.json > "$RUNNER_TEMP/manifest.json"
+          mv "$RUNNER_TEMP/manifest.json" .claude-plugin/marketplace.json
+          jq . .claude-plugin/marketplace.json
+          git add -A
+          # A re-run of the tag finds the marketplace already holding this version: nothing to
+          # commit, and that is success.
+          if git diff --cached --quiet; then
+            echo "the marketplace already holds voice $version"
+          else
+            git commit -m "voice $version"
+            # Another project's release may have pushed since the clone; rebase onto it and try again.
+            for attempt in 1 2 3; do
+              git push "$remote" HEAD:main && break
+              [ "$attempt" = 3 ] && exit 1
+              git pull --rebase "$remote" main
+            done
+          fi
+          git tag -f "voice-${GITHUB_REF_NAME}"
+          git push --force "$remote" "voice-${GITHUB_REF_NAME}"

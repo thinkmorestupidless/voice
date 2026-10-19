@@ -44,6 +44,18 @@ hooks:
 check:
     uvx --from "git+https://github.com/thinkmorestupidless/speckit-bdd@v0.2.0#subdirectory=checker" speckit-bdd check --root . --glossary GLOSSARY.md --features features --specs specs
 
+# Check every page, then build the site, llms.txt, llms-full.txt, docs-index.json and the skill.
+docs:
+    uv run --project tools/docs docs build
+
+# Refresh the rendered skill from the pages.
+docs-sync:
+    uv run --project tools/docs docs sync
+
+# The site with live reload, while writing.
+docs-serve:
+    uv run --project tools/docs docs serve
+
 # The live-model suites, on purpose: needs ANTHROPIC_API_KEY and spends tokens.
 live:
     VOICE_INCLUDE_TAGS=Live sbt "service/testOnly voice.live.*"
