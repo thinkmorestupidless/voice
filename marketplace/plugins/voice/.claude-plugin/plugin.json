@@ -1,0 +1,20 @@
+{
+  "name": "voice",
+  "version": "0.0.0",
+  "description": "The Voice documentation as a skill — privacy-first civic participation on ankka: pseudonymous sessions, private conversations that become confirmed concerns, exact approval of what is shared, source-backed public issues, opinions apart from evidence, accountable actions, one truthful update to each follower, and erasure by destroying a participant's key.",
+  "author": {
+    "name": "thinkmorestupidless",
+    "url": "https://github.com/thinkmorestupidless/voice"
+  },
+  "homepage": "https://docs.makethemlisten.uk/",
+  "repository": "https://github.com/thinkmorestupidless/ankka-marketplace",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ankka",
+    "voice",
+    "civic-participation",
+    "privacy",
+    "erasure",
+    "evidence"
+  ]
+}

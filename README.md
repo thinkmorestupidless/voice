@@ -6,10 +6,13 @@ they choose, and hears what representatives recorded about it; anyone can read a
 issues; a participant can have their personal data erased. A demonstrator for a pilot, on synthetic
 data.
 
-- What it does and for whom: `docs/product.md`
-- How it is built: `docs/architecture.md`
-- What each audience can read, and what erasure leaves: `docs/privacy-and-threat-model.md`
-- What it does not do: `docs/limitations.md`
+**Documentation: [docs.makethemlisten.uk](https://docs.makethemlisten.uk/).** Built from `docs/` by ankka's
+docs tool (`just docs`), and rendered as an agent skill under `marketplace/`.
+
+- What it does and for whom: `docs/index.md`
+- How it is built: `docs/concepts/architecture.md`
+- What each audience can read, and what erasure leaves: `docs/concepts/audiences.md`, `docs/concepts/sealing.md`
+- What it does not do: `docs/reference/limitations.md`
 - The feature specification, plan and tasks: `specs/001-voice-mvp/`
 - The behaviour, as Gherkin: `features/`
 

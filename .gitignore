@@ -10,3 +10,5 @@ target/
 web/node_modules/
 web/dist/
 web/coverage/
+__pycache__/
+.venv/

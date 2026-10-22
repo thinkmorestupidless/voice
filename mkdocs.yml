@@ -1,0 +1,116 @@
+# The documentation site. The source is docs/, plain Markdown with YAML frontmatter; this file says how
+# MkDocs renders it for people and, under `extra.docs`, what ankka's docs tool needs to know about this
+# repository. Everything machine-facing — llms.txt, llms-full.txt, raw Markdown per page,
+# docs-index.json and the agent skill — is rendered from the same tree by
+# `uv run --project tools/docs docs build`. See docs/contributing/documentation.md.
+site_name: Voice
+site_description: Privacy-first civic participation on ankka — a resident talks pseudonymously about a concern, approves exactly what is shared, follows what a representative records about it, and can have their personal data erased while the public issue stays.
+site_url: https://docs.makethemlisten.uk/
+repo_url: https://github.com/thinkmorestupidless/voice
+repo_name: thinkmorestupidless/voice
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: target/docs-site
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+# Deliberately plain, as ankka's pages are: no admonitions, no snippet syntax. A page must read
+# correctly with no renderer at all, because that is how a model most often receives it.
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: false
+  - pymdownx.superfences
+  - pymdownx.blocks.tab:
+      alternate_style: true
+
+extra:
+  generator: false
+  # What ankka's docs tool needs to know about this repository. The tool is ankka's; the rules are on
+  # docs/contributing/documentation.md.
+  docs:
+    facets:
+      audiences: [reader, participant, reviewer, representative, operator]
+    skills:
+      source: tools/docs/skill
+      targets:
+        - path: marketplace/plugins/voice/skills
+    site-links:
+      retired-hosts: []
+      files: [README.md, marketplace/plugins/voice/.claude-plugin/plugin.json]
+
+nav:
+  - Home: index.md
+  - Get started:
+      - Run it on your machine: get-started/run-locally.md
+      - Your first issue: get-started/first-issue.md
+  - Concepts:
+      - How Voice works: concepts/architecture.md
+      - The loop: concepts/the-loop.md
+      - Five audiences: concepts/audiences.md
+      - Sealed fields and erasure: concepts/sealing.md
+      - Opinions apart from evidence: concepts/opinions-and-evidence.md
+      - Nothing waits for a model: concepts/nothing-waits-for-a-model.md
+      - Voice and the reasoning service: concepts/reasoning.md
+      - Threat model: concepts/threat-model.md
+  - Use:
+      - Sessions: build/sessions.md
+      - Conversations and concerns: build/conversations.md
+      - Sharing and review: build/sharing.md
+      - Evidence and the public issue: build/evidence.md
+      - Priorities and trade-offs: build/deliberation.md
+      - Investigations and actions: build/investigations-and-actions.md
+      - Following an issue: build/following.md
+      - Erasure: build/erasure.md
+      - The interface: build/the-interface.md
+      - The seed pack: build/seed-pack.md
+      - Testing: build/testing.md
+  - Deploy and operate:
+      - Deploy on ankka: deploy/deploy-on-ankka.md
+      - Operate the pilot: deploy/operate.md
+  - Reference:
+      - HTTP API: reference/http-api.md
+      - Refusals: reference/refusals.md
+      - Records: reference/records.md
+      - Configuration: reference/configuration.md
+      - Limitations: reference/limitations.md
+      - Glossary: reference/glossary.md
+  - Contributing:
+      - Writing documentation: contributing/documentation.md
+      - Features and the glossary: contributing/features-and-glossary.md
+      - Releasing: contributing/releasing.md
